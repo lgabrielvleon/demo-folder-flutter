@@ -1,38 +1,137 @@
-.App {
-  text-align: center;
+:root {
+    --color-primary: #30313e;
+    --color-primary-rgb: 35, 36, 47;
+    --color-secundary: #bf3d64;
+    --color-secundary-rgb: 195, 42, 84;
+    --color-secundary-2: #08fdd8;
+    --font-family-primary: 'Londrina Solid', cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    font-family: var(--font-family-primary);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.background-page {
+    position: absolute;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.background-page .color1 {
+    background-color: rgb(var(--color-primary-rgb));
+    width: 100vw;
+    height: 100vh;
+    clip-path: polygon(0 0, 64% 0, 75% 100%, 0% 100%);
 }
 
-.App-link {
-  color: #61dafb;
+.background-page .color2 {
+    position: absolute;
+    top: 0;
+    background-color: rgb(var(--color-secundary-rgb));
+    width: 100vw;
+    height: 100vh;
+    clip-path: polygon(64% 0, 100% 0, 100% 100%, 75% 100%);
+    box-shadow: 10px 5px 5px black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-custom {
+    transition: .3s all ease;
+}
+
+.nav-custom .navbar-brand {
+    font-size: 3rem;
+    color: rgb(var(--color-secundary-rgb));
+    transition: .3s all ease;
+}
+
+.nav-custom .nav-item .nav-link {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0 22px;
+    color: white;
+    font-family: 'Roboto';
+    letter-spacing: .05rem;
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.8);
+    transition: .3s all ease;
+}
+
+.nav-custom .custom-brand-name {
+    transition: .3 all ease;
+}
+
+.nav-custom .custom-brand-name .brand-heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+}
+
+.nav-custom .custom-brand-name .brand-subheading {
+    font-size: 12px;
+    font-weight: 900;
+    color: rgb(var(--color-secundary-rgb));
+    text-transform: uppercase;
+    font-family: 'Roboto';
+}
+
+.section-principal {
+    position: relative;
+    padding-top: calc(4rem + 82px);
+    overflow-y: hidden;
+}
+
+.section-principal .custom-img {
+    filter: drop-shadow(11px 6px 4px rgba(0, 0, 0, 0.25));
+}
+
+.section-principal .principal-heading {
+    color: white;
+    font-weight: 400;
+}
+
+.section-principal .principal-heading>span {
+    color: rgb(var(--color-secundary-rgb));
+}
+
+.section-principal .principal-subheading {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.3em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.section-principal .custom-btn {
+    border-radius: 36px;
+    padding: 9px 72px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFDFD;
+}
+
+.btn-primary {
+    background-color: rgb(var(--color-secundary-rgb));
+    border-color: rgb(var(--color-secundary-rgb));
+}
+
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover {
+    background-color: #b1254b !important;
+    border-color: #b1254b !important;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(238, 9, 121, 0.5);
+}
+
+@media screen and (max-width: 992px) {
+    .nav-custom {
+        background: rgba(0, 0, 0, 0.25);
+        transition: .3s all ease-in;
+    }
 }
